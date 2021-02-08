@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "widgets/pod-stress"
+		}
+	],
+	"settings": {}
+}
