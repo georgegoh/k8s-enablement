@@ -1,0 +1,14 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  namespace: pod-stress
+  name: pod-stress
+spec:
+  virtualhost:
+    fqdn: <INSERT YOUR FQDN HERE>
+  routes:
+    - conditions:
+      - prefix: /
+      services:
+        - name: pod-stress
+          port: 80

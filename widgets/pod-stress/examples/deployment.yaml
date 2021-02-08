@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pod-stress
+spec: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: pod-stress
+  labels:
+    app: pod-stress
+  name: pod-stress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-stress
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pod-stress
+    spec:
+      containers:
+      - image: georgegoh/pod-stress:latest
+        name: pod-stress
+        ports:
+        - containerPort: 5000
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: pod-stress
+  labels:
+    app: pod-stress
+  name: pod-stress
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: pod-stress
