@@ -15,6 +15,6 @@ You decide to use the LimitRange mechanism to enforce consumption restrictions.
 
 Tasks
 -----
-- Write LimitRange objects that apply for the `Account Service`.
+- Write LimitRange objects that apply for the `Account Service` namespace.
 - Write a simple test case that validates that the LimitRange object is applied correctly.
 - Will the new LimitRanges be applied to the currently running pods? If not, what is your strategy for applying them?
