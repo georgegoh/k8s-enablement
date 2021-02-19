@@ -11,10 +11,10 @@ An administrator wants to understand how multiple projects can run effectively o
 | Storefront Web App | storefront | 4 | 200m(500m) | 90Mi(100Mi) |
 | API Gateway | apigw | 6 | 200m(500m) | 100Mi(105Mi) |
 
-You decide to use the LimitRange mechanism to enforce consumption restrictions.
+You decide to use the LimitRange and Quota mechanisms to enforce consumption restrictions.
 
 Tasks
 -----
-- Write LimitRange objects that apply for the `Account Service` namespace.
-- Write a simple test case that validates that the LimitRange object is applied correctly.
-- Will the new LimitRanges be applied to the currently running pods? If not, what is your strategy for applying them?
+- Determine appropriate quotas, default requests and limits for the Account Service.Write LimitRange and Quota objects that apply for the `Account Service` namespace.
+- Write a simple test case that validates that the objects are applied correctly.
+- Will the new LimitRange and Quota objects be applied to the currently running pods? If not, what is your strategy for applying them?
